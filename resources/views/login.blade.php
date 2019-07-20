@@ -8,7 +8,7 @@
                         {!! csrf_field() !!}
                         <div class="control-group">
                             <div class="form-group">
-                                <label>Email Address</label>
+                                <label>Username</label>
                                 <input type="text" value="{{ old('username') }}" name="username" class="form-control" id="username"  placeholder="Username" autocomplete="off">
                                 <span class="text-danger">{{$errors->first('username')}}</span>
                             </div>
@@ -20,13 +20,10 @@
                                 <span class="text-danger">{{$errors->first('password')}}</span>
                             </div>
                         </div>
-
-                        <br>
-
+                       
                         <div class="form-group">
                             <input class="btn-login" type="submit" value="Login">
                         </div>
-
                         
                         <div class="form-group">
                         <span class="text-danger">{{$errors->first('error')}}</span>
@@ -35,5 +32,11 @@
                 </div>
             </div>
     </section>
-   
+@section('scripts')
+<script>
+$(document).ready(function(){
+    $("#username").focus();
+});
+</script>
+@endsection
 @endsection

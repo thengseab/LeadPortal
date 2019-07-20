@@ -1,41 +1,359 @@
+.bg-secondary,.footer{background-color: #0101a1 !important;}
+.swap-data {margin-bottom: 50px;}
+.copyright-fronend{background-color: #1e1eaf !important;}
 .room-booking{padding: 10rem 0;}
-.cls-login{background: #1abc9c;}
-.booking-room-title{margin-top:50px !important;}
-.card-header{
+.cls-login{background: #e8e6e6;}
+.booking-room-title{margin-top: 0px !important;padding-left: 0px;}
+.head-room-booking-title{margin-top: 150px;}
+.cls-front-page .card-header{
     border-radius: 0px !important;
-    margin: 100px 0px 0px;
-    background: #f7f7f7;
-
+    margin: 40px 0px 0px;
+    background: transparent !important;
+    /* background: #f7f7f7 !important; */
     /*border-radius: 10px 10px 0px 0px;
     margin: 50px 0px 0px;
     border-top: 1px solid #000;
     border-right: 1px solid #000;
     border-left: 1px solid #000;*/
+    font-size: 20px;
 }
-.card-body{
+.cls-front-page .card-body{
     background: #f7f7f7;
     /*background: #f7f7f7;
     border-left: 1px solid #2c3e50;
     border-right: 1px solid #2c3e50;
     border-bottom: 1px solid #2c3e50;
     border-radius: 0px 0px 10px 10px;*/
+    padding: 20px 20px 3px 20px;
+    margin-bottom: 20px;
 }
-input[type='text'],input[type='password'],input[type='submit'],button,input[type='button'] {
-    border-radius: 0px;
+
+.cls-login .card-header {
+    border-radius: 0px !important;
+    margin: 100px 0px 0px;
+    background: #f7f7f7 !important;
+}
+.cls-login .card-body {
+    background: #f7f7f7;
+    padding: 20px;
+}
+
+input[type='text'],input[type='password'],input[type='submit'],button,input[type='button'],#datepicker,.input-group-append,.btn-outline-secondary {
+    border-radius: 0px !important;
     border: 1px solid #ded8d8;
     outline: 0;
 }
 
-input[type='text']:focus,input[type='password']:focus,input[type='submit']:focus,button:focus,input[type='button']:focus {
-    border-radius: 0px;
-    border: 1px solid #1abc9c;
+input[type='text']:focus,input[type='password']:focus,input[type='submit']:focus,button:focus,input[type='button']:focus,#datepicker:focus,.input-group-append:focus,.btn-outline-secondary:focus {
+    border-radius: 0px !important;
+    border: 1px solid #0101a1;
     outline: 0;
-    box-shadow:none;
+    box-shadow:none !important;
+    
 }
+/*Success message*/
+.alert-success,.alert-danger{border-radius: 0px !important;}
+.form-control{
+    background-color: #fff;
+    background-clip: inherit !important; 
+    border: .125rem solid #ced4da; 
+    border-radius: .5rem;
+     -webkit-transition: border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out; 
+     transition: border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out; 
+     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s ease-in-out; 
+}
+.btn-outline-secondary{border-color:transparent !important;}
+.btn-outline-secondary:not(:disabled):not(.disabled).active, .btn-outline-secondary:not(:disabled):not(.disabled):active, .show>.btn-outline-secondary.dropdown-toggle{
+    color: #6c757d !important;
+    background-color: transparent !important;
+    border-color: transparent !important;
+}
+
+#start_timepicker,#end_timepicker {
+    border: 1px solid #c5bebe;
+    padding: 10px;
+    background: #fff;
+}
+
+.gj-timepicker-md [role=right-icon] {
+    cursor: pointer;
+    position: absolute;
+    right: 10px !important;
+    top: 7px !important;
+    font-size: 24px;
+}
+
 .btn-login {
-    background: #1abc9c;
+    background: #0101a1;
     padding: 8px 20px 10px 20px;
     color: #ffff;
     border: 0px !important;
 }
 .btn-login:hover{opacity:.8;}
+#mainNav .navbar-nav li.nav-item a.nav-link:hover {
+    color:#dacdcd !important;
+}
+.btn-save {
+    background: #0101a1;
+    padding: 5px 20px;
+    color: #fff;
+    border: 1px solid #0101a1;
+}
+.btn-save:hover{opacity:.8;}
+/*
+* Select option with search box
+*/
+.chosen-container-single .chosen-single{border: 1px solid #ded8d8 !important; box-shadow: none !important; height: 40px !important;line-height: 40px !important;background: none !important;background-color:#fff !important;border-radius: 0px !important;}
+.chosen-container .chosen-drop{border: 1px solid #e0d8d8 !important; box-shadow: none !important;}
+.chosen-container .chosen-results li.highlighted {
+    background-color: #0101a1 !important;
+    background-image: none !important;
+    background-image: none !important;
+    background-image: none !important;
+    background-image: none !important;
+    background-image: none !important;
+    color: #fff !important;
+    padding: 7px !important;
+}
+.chosen-container .chosen-results li.active-result{padding: 5px 6px !important;}
+.chosen-container-single .chosen-single div b{display: block;width: 100%;height: 100%;background: url("../img/chosen-sprite.png") no-repeat 0 10px !important;}
+.chosen{border-radius: 0px !important;border:1px solid #ded8d8;} .chosen:focus{border:1px solid #ded8d8;box-shadow: none;}
+
+/*
+* Date picker
+*/
+#ui-datepicker-div { width: 19%;}
+.ui-state-default {text-align:center !important;}
+#ui-datepicker-div { background: #f3f3f3; border-radius: 0px;}
+.ui-datepicker-header.ui-widget-header.ui-helper-clearfix.ui-corner-all {background: #0101a1;border-radius: 0px !important;border: 1px solid;}
+
+/*----------timepicker-------*/
+.timepicker_wrap {
+    padding: 15px 4px 15px 4px;
+    border-radius: 0px;
+    z-index: 998;
+    display: none;
+    /* box-shadow: 2px 2px 5px 0 rgba(50,50,50,0.35); */
+    background: #ffffff;
+    border: 1px solid #ccc;
+    float: left;
+    position: absolute;
+    top: 27px;
+    left: 0;
+}
+.time, .mins, .meridian{width: 77px !important;margin: 0px !important;}
+.timepicker_wrap{padding: 15px 4px 15px 4px !important;}
+input.timepicki-input{font-size: 15px !important;}
+.timepicker_wrap .prev, .timepicker_wrap .next{border-radius: 0px !important;padding: 15px 26px 15px 26px !important;background: url(../img/arrow.png) no-repeat;}
+.timepicker_wrap .prev { background-position: 50% -32% !important;}
+.timepicker_wrap .next {background-position: 50% 128% !important;}
+.ui-datepicker-close { display: none; }
+.ui-datepicker .ui-datepicker-buttonpane{display: flex;justify-content: center;background: #e4e4ef;}
+/*datable*/
+.danger {background: #f5e9e9 !important;}
+.pending { background: #dffff9 !important;}
+.warning {background: #fff7cd !important;}
+
+/*pagination*/
+
+.pagination li a {color: #fff;padding: 2px 12px 5px;background: #ca1325;margin: 2px;line-height: 25px;display: block;}
+.pagination li a:hover {text-decoration: none;}
+.disabled {color: #fdfdfd;opacity: .6;color: #fff;padding: 2px 12px 5px;background: #ca1325;margin: 2px;line-height: 25px;display: block;}
+.pagination .active{color: #fff;padding: 2px 12px 5px;margin: 2px;line-height: 25px;display: block;background: #0101a1 !important;}
+.pagination .active span {color: #fff;}
+
+.wrap-search{margin-bottom:20px;}
+.wrap-search .col-md-3,.wrap-search .col-md-1 {padding: 0px;}
+.wrap-search .row{display: flex;margin: 0px;align-items: center;vertical-align: middle;justify-content: center;}
+.wrap-search {background: #ab1b1b;}
+.wrap-search .col-md-3 .form-group {margin-bottom:0px;}
+
+.wrap-search input[type='text'], .wrap-search input[type='password'], .wrap-search input[type='submit'], .wrap-search button, .wrap-search input[type='button'],.wrap-search  #datepicker, .wrap-search .input-group-append, .wrap-search .btn-outline-secondary{
+    border:0px;
+    border-radius: 0px !important;
+    outline: 0;
+}
+.wrap-search .chosen-search input[type='text']{border:1px solid #ded8d8; }
+.wrap-search .chosen-search input[type='text']:focus{border:1px solid #ded8d8; }
+.wrap-search input[type='text']:focus,.wrap-search input[type='password']:focus,.wrap-search input[type='submit']:focus,.wrap-search button:focus,.wrap-search input[type='button']:focus,.wrap-search #datepicker:focus,.wrap-search .input-group-append:focus,.wrap-search .btn-outline-secondary:focus {
+    border:0px;
+    border-radius: 0px !important;
+    outline: 0;
+}
+    
+.icon-search {
+    background: #eae7e7;
+    display: block;
+    margin: 0px auto;
+    text-align: center;
+    color: #0101a1;
+    padding: 7.8px;
+    margin-left: 0px;
+    width: 100%;
+    position: relative;
+    top:8px;
+}
+
+.table thead th {
+    border-bottom: .2rem solid #ab1b1b !important;
+}
+
+.table-bordered td, .table-bordered th {
+    border: .12rem solid #d0a0a0 !important;
+}
+
+.table-bordered {
+    border: .12rem solid #ab1b1b !important;
+}
+/*.icon-search:hover {color: #c75d5d;}*/
+
+/*--------- Admin stylesheet --------*/
+.breadcrumb{border-radius: 0px !important;}
+
+.admin-page {
+    background: #f7f7f7;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+.clsor {
+    color: #0101a1;
+    font-size: 12px;
+    vertical-align: text-top;
+    padding: 2px;
+}
+
+.page-admin .chosen-container-single .chosen-single {
+    border: 1px solid #ab1b1b !important;
+    box-shadow: none !important;
+    height: 40px !important;
+    line-height: 40px !important;
+    background: none !important;
+    background-color: #fff !important;
+    border-radius: 0px !important;
+}
+
+.page-admin .icon-search {
+    background: #eae7e7;
+    display: block;
+    margin: 0px auto;
+    text-align: center;
+    color: #0101a1;
+    padding: 7px !important;
+    margin-left: 0px;
+    width: 100%;
+    position: relative;
+    top: 8px;
+}
+
+.add-new-booking {
+    background: #212529;
+    padding: 5px;
+    display: inline-block;
+    width: 35%;
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 13px;
+    margin-right: 15px;
+}
+.cls-back{background: #5353ca;}
+.add-new-booking:hover,.cls-back:hover {
+    text-decoration: none;
+    color: #fff;
+    opacity: .8;
+}
+/*modal*/
+.delete-modal {
+    height: auto;
+    width: auto !important;
+    border-radius: 0px !important;
+    text-align: center !important;
+}
+
+.delete-modal a {
+    border-radius: 0px;
+    line-height: 1;
+    padding: 8px 10px 10px 10px;
+}
+.profile-pic{width:30px;height:30px;border-radius: 50px;}
+.icon-profile{display:none;}
+b{
+    color: #d01e1e;
+    font-weight: bold;
+}
+@media (min-width: 768px) { .col-md-3 {max-width: 30%;flex: 0 0 30% !important;}}
+@media (max-width: 767.98px) {
+     #ui-datepicker-div{width:78%;} 
+     .chosen{border-radius: 0px !important;border:1px solid #ded8d8;margin-bottom: 5px;} 
+     .chosen:focus{border:1px solid #ded8d8;box-shadow: none;} 
+     .chosen option{border-radius: 0px !important;border:1px solid #ded8d8;} 
+     
+     #table-wrapper {
+        position:relative;
+      }
+      #table-scroll {
+        
+        overflow:auto;  
+        margin-top:20px;
+      }
+      #table-wrapper table {
+        width:100%;
+      
+      }
+      #table-wrapper table * {        
+        color:black;
+      }
+      #table-wrapper table thead th .text {
+        position:absolute;   
+        top:-20px;
+        z-index:2;
+        height:20px;
+        width:35%;
+        border:1px solid red;
+      }   
+
+      /*admin profile*/
+      .profile-pic{display: block;width: 15px;height: 15px;}
+      .navbar-dark .navbar-nav .nav-link {
+            padding-left: 5px;
+            padding-right: 5px;
+       }
+       .profile {display: none;}
+      
+}
+@media (max-width: 575.98px) { 
+    #ui-datepicker-div{width:81%;}
+}
+@media (max-width: 414.98px) { 
+    #ui-datepicker-div{width:83%;}
+}
+@media (max-width: 375.98px) { 
+    #ui-datepicker-div{width:81%;}
+}
+@media (max-width: 320.98px) { 
+    .wrap-search{margin-bottom:20px;}
+    .wrap-search .col-md-3,.wrap-search .col-md-1 {padding: 0px;}
+    .wrap-search .row{display: flex;margin: 0px;align-items: center;vertical-align: middle;justify-content: center;}
+    .wrap-search {background: transparent;}
+    .wrap-search .col-md-3 .form-group {margin-bottom:0px;}
+
+    .wrap-search input[type='text'], .wrap-search input[type='password'], .wrap-search input[type='submit'], .wrap-search button, .wrap-search input[type='button'],.wrap-search  #datepicker, .wrap-search .input-group-append, .wrap-search .btn-outline-secondary{
+        border: 1px solid #e2e2e2;
+        border-radius: 0px !important;
+        outline: 0;
+        margin-bottom: 5px;
+    }
+    .wrap-search .chosen-search input[type='text']{border:1px solid #ded8d8; }
+    .wrap-search .chosen-search input[type='text']:focus{border:1px solid #ded8d8; }
+    .wrap-search input[type='text']:focus,.wrap-search input[type='password']:focus,.wrap-search input[type='submit']:focus,.wrap-search button:focus,.wrap-search input[type='button']:focus,.wrap-search #datepicker:focus,.wrap-search .input-group-append:focus,.wrap-search .btn-outline-secondary:focus {
+        border:1px;
+        border-radius: 0px !important;
+        outline: 0;
+    }
+    .xs-hide {
+    display: none;
+}
+.cls-front-page .card-body{padding: 0px;}
+    #ui-datepicker-div{width:78%;}
+}

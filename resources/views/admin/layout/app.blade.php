@@ -9,11 +9,30 @@
     <link rel="stylesheet" href="{{asset('assets/css/all.min.css')}}">    
     <link rel="stylesheet" href="{{asset('assets/css/dataTables.bootstrap4.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/sb-admin.css')}}">
+
+    <!--//Datatable-->
+    <link rel="stylesheet" href="{{asset('assets/css/datatables.min.css')}}">
+    <!--//Select timepicker-->
+    <link rel="stylesheet" href="{{asset('assets/css/timepicki.css')}}">   
+
+    <!-- font awesome-->
+    <link rel="stylesheet" href="{{asset('assets/css/font-awesome.min.css')}}">   
+    <!--//Select option with search box-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.min.css">
+    <!--//Datepicker-->
+    <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel = "stylesheet">
+    <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">   
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <!-- modal -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
 </head>
 <body id="page-top">
 <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-    <a class="navbar-brand mr-1" href="index.html">BOOKING MEETING ROOM</a>
+    <a class="navbar-brand mr-1" href="{{route('dashboard')}}">BOOKING MEETING ROOM</a>
     <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
         <i class="fas fa-bars"></i>
     </button>
@@ -23,7 +42,7 @@
               
         <li class="nav-item dropdown no-arrow">
             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-user-circle fa-fw"></i>
+            <span class="profile">{{ucfirst($username)}}</span> <img class="profile-pic" src="{{asset('uploads/profile.jpg')}}" alt="">
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
                 <a class="dropdown-item" href="{{route('logout')}}">Logout</a>                
@@ -36,42 +55,22 @@
 <div id="wrapper">
     <!-- Sidebar -->
     <ul class="sidebar navbar-nav">
-        <li class="nav-item active">
-            <a class="nav-link" href="index.html">
+        <li class="nav-item <?php echo (Request::segment(2)=='dashboard')? 'active':'';?>">
+            <a class="nav-link" href="{{route('dashboard')}}">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
                 <span>Dashboard</span>
             </a>
-        </li>
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-fw fa-folder"></i>
-                <span>Pages</span>
-            </a>
-            <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-                <h6 class="dropdown-header">Login Screens:</h6>
-                <a class="dropdown-item" href="login.html">Login</a>
-                <a class="dropdown-item" href="register.html">Register</a>
-                <a class="dropdown-item" href="forgot-password.html">Forgot Password</a>
-                <div class="dropdown-divider"></div>
-                <h6 class="dropdown-header">Other Pages:</h6>
-                <a class="dropdown-item" href="404.html">404 Page</a>
-                <a class="dropdown-item" href="blank.html">Blank Page</a>
-            </div>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="charts.html">
-                <i class="fas fa-fw fa-chart-area"></i>
-                <span>Charts</span></a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="tables.html">
-                <i class="fas fa-fw fa-table"></i>
-                <span>Tables</span></a>
+        </li>        
+        <li class="nav-item <?php echo (Request::segment(2)=='lists-booking')? 'active':'';?>">
+            <a class="nav-link" href="{{route('lists-booking',['action'=>'all'])}}">
+            <i class="fa fa-calendar" aria-hidden="true"></i>
+                <span>Booking Room</span></a>
         </li>
     </ul>
 
     <div id="content-wrapper">
         <div class="container-fluid">
+       
            @yield('contents')
         </div>
         <!-- /.container-fluid -->
@@ -80,7 +79,7 @@
         <footer class="sticky-footer">
             <div class="container my-auto">
                 <div class="copyright text-center my-auto">
-                    <span>Copyright © Your Website 2019</span>
+                    <span>Copyright © Booking Meeting Room <?php echo date("Y");?></span>
                 </div>
             </div>
         </footer>
@@ -95,5 +94,20 @@
 <script src="{{asset('assets/js/bootstrap.bundle.js')}}"></script>
 <script src="{{asset('assets/js/jquery.easing.min.js')}}"></script>
 <script src="{{asset('assets/js/sb-admin.min.js')}}"></script>
+
+<!--//Select option with search box-->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
+<!--//Select timepicker-->
+<script src="{{asset('assets/js/timepicki.js')}}"></script>
+<!--//Datepicker-->
+
+<script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+<!-- modal -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+
+@yield('scripts')
 </body>
 </html>
